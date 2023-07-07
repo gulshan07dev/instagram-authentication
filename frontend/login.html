@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body class="flex">
+    <form class="container flex" id="login-form">
+        <h1>Instagram Login</h1>
+        <div class="input-box flex">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username">
+        </div>
+        <div class="input-box flex">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password">
+        </div>
+        <button>Login</button>
+        <div class="forgot flex">
+            <span>Forgot Password?</span>
+            <a href="./signup.html">Signup</a>
+        </div>
+    </form>
+</body>
+<script>
+    // get dom element
+    const loginForm = document.getElementById('login-form');
+
+    // Event listener for the login form submission
+    loginForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Get the form data
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        // Create an object with the form data
+        const formData = {
+            username,
+            password
+        };
+
+        // Send a POST request to the login API endpoint
+        fetch('http://localhost:500/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => response.json())
+            .then(data => { 
+                // Check if login was successful
+                if (data.success) {
+                    // Redirect to the home page
+                    window.location.href = './index.html';
+                    console.log(data);
+                } else {
+                    // Handle login error
+                    alert(data.error)
+                }
+            })
+            .catch(error => {
+                alert(error)
+            });
+    });
+
+</script>
+
+</html>
