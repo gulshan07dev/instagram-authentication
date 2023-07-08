@@ -4,7 +4,7 @@ This project implements an authentication system for Instagram-like functionalit
 
 ## Technologies Used
 
-- HTML, CSS, JavaScript
+- React
 - Node.js
 - Express
 - MongoDB
@@ -22,10 +22,10 @@ This project implements an authentication system for Instagram-like functionalit
 
 ## API Endpoints
 
-- /signup
-- /signupDataValidate
-- /login
-- /loginDataValidate
+- `/signup`: Create a new user account by providing the required information (name, username, email, password, and bio).
+- `/signupDataValidate`: Middleware to validate the sign-up data before saving it to the database.
+- `/login`: Authenticate a user by providing the username and password.
+- `/loginDataValidate`: Middleware to validate the login data before processing the authentication.
 
 ## Key Features
 
@@ -38,10 +38,10 @@ This project implements an authentication system for Instagram-like functionalit
 To run this project locally, follow these steps:
 
 1. Clone the repository: `git clone <repository-url>`
-2. Navigate to the project directory: `cd instagram-authentication` then `cd backend`
+2. Navigate to the project directory: `cd instagram-authentication`
 3. Install the dependencies: `npm install`
 4. Set up the environment variables:
-   - Create a `.env` file in the backend folder.
+   - Create a `.env` file in the root directory.
    - Define the following variables in the `.env` file:
      ```
      PORT=<server-port>
@@ -50,9 +50,8 @@ To run this project locally, follow these steps:
      SECRET=<jwt-secret-key>
      ```
 5. Start the server: `npm start`
-6. Open the frontend folder and go to `signup.html` and `login.html`. Change the fetch API URL in the script tag to match your server URL.
-7. Run the `signup.html` file using a live server.
-8. Open a web browser and access the application at `http://localhost:<server-port>`
+6. Open the client-side folder and start the development server: `cd client` and `npm start`
+7. Open a web browser and access the application at `http://localhost:<server-port>`
 
 ## License
 
