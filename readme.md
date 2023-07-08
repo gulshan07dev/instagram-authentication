@@ -41,7 +41,7 @@ To run this project locally, follow these steps:
 2. Navigate to the project directory: `cd instagram-authentication`
 3. Install the dependencies: `npm install`
 4. Set up the environment variables:
-   - Create a `.env` file in the root directory.
+   - Create a `.env` file in the backend directory.
    - Define the following variables in the `.env` file:
      ```
      PORT=<server-port>
