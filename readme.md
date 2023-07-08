@@ -1,6 +1,6 @@
 # Instagram Login and Signup Authentication
 
-This project implements an authentication system for Instagram-like functionality, including user login, sign-up, and a protected home page. The system utilizes HTML, CSS, and JavaScript for the client-side user interface, Node.js and Express for the server, and MongoDB for data storage.
+This project implements an authentication system for Instagram-like functionality, including user login, sign-up, and a protected home page. The system utilizes React for the client-side user interface, Node.js and Express for the server, and MongoDB for data storage.
 
 ## Technologies Used
 
