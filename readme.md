@@ -2,7 +2,11 @@
 
 This project implements an authentication system for Instagram-like functionality, including user login, sign-up, and a protected home page. The system utilizes React for the client-side user interface, Node.js and Express for the server, and MongoDB for data storage.
 
-![Project Screenshot](C:\Users\hp\Videos\Captures\Instagram Auth System - Google Chrome 07_09_2023 2_44_35 PM.png)
+![signup page](https://res.cloudinary.com/dhwbyshmo/image/upload/v1688895583/Screenshot_2023-07-09_at_15-07-54_Instagram_authentication_ajjkis.png)
+
+![login page](https://res.cloudinary.com/dhwbyshmo/image/upload/v1688895600/Screenshot_2023-07-09_at_15-08-20_Instagram_authentication_lusnpw.png)
+
+![home page: all data are dynamic (comes from database), rather than profile image and followers](https://res.cloudinary.com/dhwbyshmo/image/upload/v1688895614/Screenshot_2023-07-09_at_15-08-41_Instagram_authentication_jrgdcc.png)
 
 ## Technologies Used
 
