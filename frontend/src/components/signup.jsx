@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "./style.css"; 
+import "./style.css";
 
 export default function Signup() {
   const [name, setName] = useState("");
@@ -32,13 +32,13 @@ export default function Signup() {
           },
         }
       );
-        // if(response.error) {
-        //     alert(response.error)
-        // }
+      if (response.error) {
+        alert(response.error);
+      }
       // Handle successful response
       navigate("/login"); // Navigate to the login page
     } catch (error) {
-      alert(error.response.data.error)
+      alert(error.response.data.error);
     }
   };
 

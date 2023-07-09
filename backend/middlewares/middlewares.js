@@ -1,6 +1,7 @@
 const userModel = require('../model/userModel.js');
 const emailValidator = require('email-validator');
 const bcrypt = require('bcrypt');
+const JWT = require('jsonwebtoken');
 
 // Middleware to validate signup data
 exports.signupDataValidate = async (req, res, next) => {
@@ -44,3 +45,26 @@ exports.loginDataValidate = async (req, res, next) => {
 
     next();
 };
+
+// Middleware to check user autherise or not
+exports.jwtAuth = async (req, res, next) => {
+    const { token } = req.cookies;
+
+    if (!token) {
+        return res.status(400).json({ error: 'User not authorised' })
+    }
+
+    try {
+        const payload = await JWT.verify(token, process.env.SECRET);
+        return res.status(200).json({
+            message: 'Authorised',
+            username: payload.username,
+            email: payload.email,
+            bio: payload.bio
+        })
+        next();
+    }
+    catch (e) {
+        return res.status(400).json({ error: e.message })
+    }
+}

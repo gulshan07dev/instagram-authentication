@@ -35,8 +35,24 @@ exports.login = async (req, res) => {
 
     res.status(200).json({
         success: true,
-        message: 'Login successful',
-        user,
-        token
+        message: 'Login successful' 
     });
+}
+
+
+// logout
+exports.logout = async (req, res) => {
+    try {
+        await res.clearCookie('token');
+        res.status(200).json({
+            success: true,
+            message: 'Logout successful'
+        })
+    }
+    catch(e) {
+        res.status(500).json({
+            success: false,
+            message: 'Internal server error'
+        })
+    }
 }

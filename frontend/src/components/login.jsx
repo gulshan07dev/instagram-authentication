@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./style.css";
 
 export default function Login() {
@@ -28,26 +30,20 @@ export default function Login() {
       );
 
       if (response.data.success) {
-        // User is authenticated, save the token and userDetails to localStorage
-        localStorage.setItem("token", response.data.token);
-        localStorage.setItem(
-          "user-details",
-          JSON.stringify(response.data.user)
-        );
-        console.log(response);
         // Redirect to the home page
         navigate("/");
       } else {
         // Login failed, display an error message
-        alert(response.data.error);
+        toast.error(response.data.error);
       }
     } catch (error) {
-      alert(error.response.data.error)
+      toast.error(error.response.data.error);
     }
   };
 
   return (
     <form className="container flex" id="login-form" onSubmit={handleSubmit}>
+      <ToastContainer/>
       <h1>Instagram Login</h1>
       <div className="input-box flex">
         <label htmlFor="username">Username</label>

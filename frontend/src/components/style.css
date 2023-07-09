@@ -6,7 +6,7 @@
 }
 
 body {
-    background: #fdfdfd;
+    background: #ffffff;
     font-family: 'poppins', sans-serif;
     min-height: 100vh;
     justify-content: center;
@@ -23,8 +23,8 @@ body {
     max-width: 500px;
     width: 95vw;
     border-radius: 3px;
-    background: white;
-    box-shadow: 0 7px 15px #00000013;
+    background: #ffffff;
+    box-shadow: 0 7px 15px #0000001c;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
@@ -41,6 +41,16 @@ button {
     border-radius: 3px;
     border: none;
     cursor: pointer;
+}
+
+.logout {
+    background: #ff0000;
+    width: auto;
+    padding: 15px 25px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    border-radius: 5px;
 }
 
 /* css for login and signup */

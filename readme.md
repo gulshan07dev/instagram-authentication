@@ -1,6 +1,8 @@
 # Instagram Login and Signup Authentication
 
-This project implements an authentication system for Instagram-like functionality, including user login, sign-up, and a protected home page. The system utilizes HTML, CSS, and JavaScript for the client-side user interface, Node.js and Express for the server, and MongoDB for data storage.
+This project implements an authentication system for Instagram-like functionality, including user login, sign-up, and a protected home page. The system utilizes React for the client-side user interface, Node.js and Express for the server, and MongoDB for data storage.
+
+![Project Screenshot](C:\Users\hp\Videos\Captures\Instagram Auth System - Google Chrome 07_09_2023 2_44_35 PM.png)
 
 ## Technologies Used
 
@@ -26,11 +28,14 @@ This project implements an authentication system for Instagram-like functionalit
 - `/signupDataValidate`: Middleware to validate the sign-up data before saving it to the database.
 - `/login`: Authenticate a user by providing the username and password.
 - `/loginDataValidate`: Middleware to validate the login data before processing the authentication.
+- `/logout`: Logout the currently authenticated user.
+- `/checkAuth`: Middleware to check if a user is authorized or not.
 
 ## Key Features
 
 - User Signup: Allow users to create an account with their name, username, email, password, and bio.
 - User Login: Authenticate users using their credentials. Upon successful login, redirect to the home page.
+- User Logout: Allow users to log out of their account.
 - Protected Home Page: Display user details on the home page. Access to the home page is protected, requiring authentication.
 
 ## Getting Started
@@ -50,11 +55,8 @@ To run this project locally, follow these steps:
      SECRET=<jwt-secret-key>
      ```
 5. Start the server: `npm start`
-6. Open the client-side folder and start the development server: `cd client` and `npm start`
-7. Open a web browser and access the application at `http://localhost:<server-port>`
-
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+6. Open the client-side folder and install the dependencies: `cd client` and `npm install`
+7. Start the client-side development server: `npm start`
+8. Open a web browser and access the application at `http://localhost:<server-port>`
 
 Feel free to customize and enhance the project according to your needs and send pull requests.
